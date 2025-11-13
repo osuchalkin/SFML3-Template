@@ -1,0 +1,18 @@
+#pragma once
+
+#include <SFML/Graphics.hpp>
+
+#include "Constants.h"
+
+
+class World
+{
+public:
+	World();
+	void generateWorld();
+	void update(sf::Time deltaTime);
+	void render(sf::RenderWindow& window);
+	void checkEvents(sf::RenderWindow& window, const sf::Event& event);
+private:
+};
+

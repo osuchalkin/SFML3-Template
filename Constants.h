@@ -4,7 +4,7 @@
 #include<string>
 
 // Game's name
-inline std::string GAME_NAME = "SFML Game";
+const std::string GAME_NAME = "SFML Game";
 
 // FPS
 const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);

@@ -19,8 +19,7 @@ void World::checkEvents(sf::RenderWindow& window, const sf::Event& event)
 {
     if (const auto* keyPressed = event.getIf<sf::Event::KeyPressed>())
     {
-        // keyPressed теперь является указателем на структуру sf::Event::KeyPressed
-        if (keyPressed->scancode == sf::Keyboard::Scan::Q)
+        if (keyPressed->scancode == sf::Keyboard::Scan::Escape)
         {
             window.close();
         }
@@ -29,9 +28,17 @@ void World::checkEvents(sf::RenderWindow& window, const sf::Event& event)
             std::cout << "I key pressed for Info\n";
         }
     }
+
+    if (const auto* KeyReleased = event.getIf<sf::Event::KeyReleased>())
+    {
+        if (KeyReleased->scancode == sf::Keyboard::Scan::I)
+        {
+            std::cout << "I key released\n";
+        }
+    }
+
     if (const auto* mouseButtonPressed = event.getIf<sf::Event::MouseButtonPressed>())
     {
-        // mouseButtonPressed теперь является указателем на структуру sf::Event::MouseButtonPressed
         if (mouseButtonPressed->button == sf::Mouse::Button::Left)
         {
             std::cout << "Left mouse button pressed at ("

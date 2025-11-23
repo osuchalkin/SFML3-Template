@@ -15,7 +15,14 @@ constexpr unsigned int SCREEN_HEIGHT = 600;
 
 // Colors
 const sf::Color BCG_COLOR(sf::Color::Blue);
+const sf::Color TEXT_COLOR(sf::Color::Yellow);
 
 // resources
 const std::string ICON_IMAGE = "assets/textures/wheel.png";
-const std::string TTF = "data/fonts/Roboto-Regular.ttf";
+const std::string TTF = "assets/fonts/Roboto-Regular.ttf";
+
+enum class GameState
+{
+	Pause,
+	Playing
+};

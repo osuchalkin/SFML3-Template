@@ -23,17 +23,17 @@ void World::checkEvents(sf::RenderWindow& window, const sf::Event& event)
         {
             window.close();
         }
-        if (keyPressed->scancode == sf::Keyboard::Scan::I)
+        if (keyPressed->scancode == sf::Keyboard::Scan::Up)
         {
-            std::cout << "I key pressed for Info\n";
+            std::cout << "Up key pressed\n";
         }
     }
 
     if (const auto* KeyReleased = event.getIf<sf::Event::KeyReleased>())
     {
-        if (KeyReleased->scancode == sf::Keyboard::Scan::I)
+        if (KeyReleased->scancode == sf::Keyboard::Scan::Up)
         {
-            std::cout << "I key released\n";
+            std::cout << "Up key released\n";
         }
     }
 

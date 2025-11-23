@@ -14,9 +14,12 @@ private:
 	void processEvents();
 	void update(sf::Time deltaTime);
 	void render();
+	void showInformation(sf::RenderWindow& window);
 
 private:
 	sf::RenderWindow mWindow;
-	std::unique_ptr<World> mWorld;
 	sf::Image mIcon;
+	GameState mGameState;
+	sf::Font mFont;
+	std::unique_ptr<World> mWorld;
 };

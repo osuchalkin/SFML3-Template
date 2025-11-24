@@ -2,24 +2,22 @@
 
 #include <SFML/Graphics.hpp> 
 
-#include "World.h"
-
+//#include "World.h"
+//#include "State.h"
+#include "GlobalState.h"
 
 class Game
 {
 public:
 	Game();
 	void run();
+	void changeState(std::unique_ptr<GlobalState> newState);
 private:
 	void processEvents();
 	void update(sf::Time deltaTime);
 	void render();
-	void showInformation(sf::RenderWindow& window);
-
 private:
 	sf::RenderWindow mWindow;
 	sf::Image mIcon;
-	GameState mGameState;
-	sf::Font mFont;
-	std::unique_ptr<World> mWorld;
+	std::unique_ptr<GlobalState> mCurrentGlobalState;
 };

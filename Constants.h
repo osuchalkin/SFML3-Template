@@ -21,8 +21,3 @@ const sf::Color TEXT_COLOR(sf::Color::Yellow);
 const std::string ICON_IMAGE = "assets/textures/wheel.png";
 const std::string TTF = "assets/fonts/Roboto-Regular.ttf";
 
-enum class GameState
-{
-	Pause,
-	Playing
-};

@@ -3,7 +3,6 @@
 /******************  Game State Stack *********************************************/
 
 #include <SFML/Graphics.hpp> 
-
 #include <iostream>
 
 #include "World.h"

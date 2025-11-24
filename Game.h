@@ -2,8 +2,6 @@
 
 #include <SFML/Graphics.hpp> 
 
-//#include "World.h"
-//#include "State.h"
 #include "GlobalState.h"
 
 class Game

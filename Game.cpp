@@ -1,5 +1,6 @@
 #include "Constants.h"
 #include "Game.h"
+#include "ResourceManager.h" 
 
 
 Game::Game() :
@@ -11,6 +12,9 @@ Game::Game() :
 	if (!mIcon.loadFromFile(ICON_IMAGE))
 		throw std::runtime_error("Failed to load png-file from data.");
 	mWindow.setIcon(mIcon);
+
+	// loading resources
+	ResourceManager::get().loadFont("main", TTF);
 
 	// set mouse position in window's center
 	sf::Vector2i windowCenter(mWindow.getSize() / 2u);

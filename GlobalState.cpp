@@ -1,5 +1,6 @@
 #include "GlobalState.h"
 #include "Game.h"
+#include "ResourceManager.h" 
 #include "State.h"
 
 #include <iostream>
@@ -7,9 +8,16 @@
 /******************  GameTitle  *********************************************/
 
 GameTitle::GameTitle(Game& game) :
-    GlobalState(game)
+    GlobalState(game),
+    mFont(),
+    mTitle(ResourceManager::get().getFont("main"), GAME_NAME)
 {
-    std::cout << "Set Title\n";
+    mTitle.setCharacterSize(80);
+    mTitle.setStyle(sf::Text::Bold);
+    mTitle.setFillColor(TEXT_COLOR);
+    sf::FloatRect textRect = mTitle.getLocalBounds();
+    mTitle.setOrigin(textRect.size / 2.0f);
+    mTitle.setPosition({ (SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) });
 }
 
 void GameTitle::handleInput(const sf::Event& event)
@@ -29,6 +37,7 @@ void GameTitle::update(sf::Time deltaTime)
 void GameTitle::render(sf::RenderWindow& window)
 {
     // Draw the background and title text.
+    window.draw(mTitle);
 }
 
 /******************  GameStateManager  *********************************************/

@@ -19,11 +19,13 @@ public:
     virtual void render(sf::RenderWindow& window) = 0;
 };
 
+/******************  GameTitle  *********************************************/
 
 class GameTitle : public GlobalState
 {
 private:
-    //
+    sf::Font mFont;
+    sf::Text mTitle;
 public:
     GameTitle(Game& game);
     void handleInput(const sf::Event& event) override;
@@ -31,6 +33,7 @@ public:
     void render(sf::RenderWindow& window) override;
 };
 
+/******************  GameStateManager  *********************************************/
 
 class GameStateManager : public GlobalState
 {

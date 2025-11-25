@@ -9,8 +9,8 @@
 
 GameTitle::GameTitle(Game& game) :
     GlobalState(game),
-    mFont(),
-    mTitle(ResourceManager::get().getFont("main"), GAME_NAME)
+    mFont(ResourceManager::get().getFont("main")),
+    mTitle(mFont, GAME_NAME)
 {
     mTitle.setCharacterSize(80);
     mTitle.setStyle(sf::Text::Bold);
